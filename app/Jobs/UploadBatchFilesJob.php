@@ -28,7 +28,7 @@ class UploadBatchFilesJob implements ShouldQueue
             return;
         }
 
-        $query = "LOAD DATA LOCAL INFILE '{$this->file}' INTO TABLE cell_sites FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 LINES;";
+        $query = "LOAD DATA LOCAL INFILE '{$this->file}' INTO TABLE cell_sites FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 LINES (lac_ci, old_sic, new_site_name, new_sic, district, province, lon, lat, azimuth, cell_name, ci, lac, rac_tac, bsc_rnc_mme_id, cluster_id, technology, vendor, sector_number, sector_id, cluster_owner, mkt_priority, fivegb_category, ds_division, last_available, status);";
 
         DB::statement($query);
     }
