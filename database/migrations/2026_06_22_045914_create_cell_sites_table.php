@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             // Primary identifiers
-            $table->string('lac_ci')->unique();           // e.g. 26003_13734
+            $table->string('lac_ci');           // e.g. 26003_13734
             $table->string('old_sic')->nullable();           // e.g. WA-GMP-0286
             $table->string('new_site_name');                // e.g. Galborella-1
             $table->string('new_sic');                       // e.g. GAM401

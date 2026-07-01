@@ -8,5 +8,5 @@ Route::group([
     'prefix' => 'v1/'
 ], function () {
     Route::post('import/csv', [CsvImportController::class, 'importCsv']);
-    Route::post('export/csv', [CsvExportController::class, 'exportCsv']);
+    Route::get('export/csv', [CsvExportController::class, 'exportCsv']);
 });
